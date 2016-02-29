@@ -1,0 +1,11 @@
+        File l = new File("C://AECLogo.jpg");
+        File m = new File(System.getProperty("user.home") + File.separatorChar + "Documents//New_AECLogo.jpg");
+        
+        System.out.println(l.exists() + "     " + m.exists());
+        
+        CopyOption[] options = new CopyOption[]{StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES};
+        try {
+            Files.copy(l.toPath(), m.toPath(), options);
+        } catch (IOException ex) {
+            Logger.getLogger(PackgesSelect.class.getName()).log(Level.SEVERE, null, ex);
+        }
