@@ -12,14 +12,14 @@ import javax.swing.*;
 
 public class Lado extends MenusLaterais{
     
+    JPanel panel = new JPanel();
+    
     public Lado(Main main, Meio meio, ArrayList<File> assents){
         this.main = main;
         this.meio = meio;
         this.Assents = assents;
         
         int larg = main.areaL().getWidth();
-        
-        JPanel panel = new JPanel();
         
         //Coloca os Botoes
         for(int i=0; i<Assents.size(); i++){
@@ -51,5 +51,16 @@ public class Lado extends MenusLaterais{
         jp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);//garante q a barra de rolagem apareça
         
         add(jp);
+    }
+    
+    @Override
+    public void AddMoreButtons(){
+        for(int i=0; i<5; i++){
+            JButton bt = null;
+            bt = new JButton(""+i);
+            bt.setPreferredSize(new Dimension(70, 70));
+            panel.add(bt);
+            panel.updateUI();
+        }
     }
 }

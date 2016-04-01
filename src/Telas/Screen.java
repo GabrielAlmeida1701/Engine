@@ -46,9 +46,7 @@ public class Screen implements MouseListener, MouseMotionListener{
     }
     
     public void draw(Graphics2D g){
-        elementos.stream().forEach(elms -> {
-            elms.draw(g);
-        });
+        elementos.stream().forEach(elms -> elms.draw(g));
         
         if(selectElm != null){
             g.setColor(Color.blue);

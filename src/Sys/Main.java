@@ -39,6 +39,10 @@ public class Main extends javax.swing.JFrame {
         Save1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        addPackge = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        addExternal = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         fundo2 = new javax.swing.JPanel();
         objLab = new javax.swing.JLabel();
         trnsPos = new javax.swing.JLabel();
@@ -101,6 +105,23 @@ public class Main extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        addPackge.setBackground(new java.awt.Color(80, 80, 80));
+        addPackge.setText("[Adiciona P]");
+        addPackge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPackgeActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Adicionar Pacote");
+
+        addExternal.setBackground(new java.awt.Color(80, 80, 80));
+        addExternal.setText("[Adiciona AE]");
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Adicionar Arquivo Externo");
+
         javax.swing.GroupLayout fundo1Layout = new javax.swing.GroupLayout(fundo1);
         fundo1.setLayout(fundo1Layout);
         fundo1Layout.setHorizontalGroup(
@@ -129,26 +150,46 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(Save1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(668, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addPackge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(fundo1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(addExternal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(418, Short.MAX_VALUE))
         );
         fundo1Layout.setVerticalGroup(
             fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(fundo1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Novo)
-                    .addComponent(Abrir)
-                    .addComponent(Save)
-                    .addComponent(Save1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)))
+                    .addGroup(fundo1Layout.createSequentialGroup()
+                        .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Novo)
+                            .addComponent(Abrir)
+                            .addComponent(Save)
+                            .addComponent(Save1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4))))
+                    .addGroup(fundo1Layout.createSequentialGroup()
+                        .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addPackge, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addExternal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(fundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))))
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         fundo1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Abrir, Novo, Save});
@@ -448,6 +489,14 @@ public class Main extends javax.swing.JFrame {
         moveTool.setIcon(new ImageIcon(getClass().getResource("/resource/icones/move.png")));
         scaleTool.setIcon(new ImageIcon(getClass().getResource("/resource/icones/scaleSel.png")));
     }//GEN-LAST:event_scaleToolMouseClicked
+
+    private void addPackgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPackgeActionPerformed
+        if(meio != null){
+            int x = getX()+getWidth()/2, y = getY()+getHeight()/2;
+            AddPackge addPck = new AddPackge(x, y, meio);
+            addPck.setVisible(true);
+        }
+    }//GEN-LAST:event_addPackgeActionPerformed
     
     public void backTool(){
         moveTool.setIcon(new ImageIcon(getClass().getResource("/resource/icones/move.png")));
@@ -535,6 +584,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Novo;
     private javax.swing.JButton Save;
     private javax.swing.JButton Save1;
+    private javax.swing.JButton addExternal;
+    private javax.swing.JButton addPackge;
     private javax.swing.JPanel fundo1;
     private javax.swing.JPanel fundo2;
     private javax.swing.JLabel jLabel1;
@@ -542,6 +593,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

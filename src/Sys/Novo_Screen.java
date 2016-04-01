@@ -21,7 +21,6 @@ public class Novo_Screen extends javax.swing.JInternalFrame {
     Main main;
     ArrayList<Boolean> checkObjs = new ArrayList<>();
     ArrayList<File> externals = new ArrayList<>();
-    PackgesSelect ps = new PackgesSelect();
     
     File folder = new File(doc.getPath()+"//EngineProjects//");
     
@@ -45,10 +44,10 @@ public class Novo_Screen extends javax.swing.JInternalFrame {
         DefaultTableModel tabs = (DefaultTableModel) Tabela.getModel();
         
         Object ob[] = {null, null};
-        for(int i=0; i<ps.getNumPacks(); i++){
+        for(int i=0; i<PackgesSelect.getNumPacks(); i++){
             checkObjs.add(false);
             tabs.addRow(ob);
-            tabs.setValueAt(ps.getPacksNames(i), i, 0);
+            tabs.setValueAt(PackgesSelect.getPacksNames(i), i, 0);
             tabs.setValueAt(checkObjs.get(i), i, 1);
         }
     }
@@ -252,10 +251,10 @@ public class Novo_Screen extends javax.swing.JInternalFrame {
             }
             
             //Cria a pasta do projeto
-            ps.createFolder(campo_NamePr.getText());
+            PackgesSelect.createFolder(campo_NamePr.getText());
             
             //Passa os Aqruivos e Pacotes para serem criados
-            ps.createWithThis(checkObjs, externals);
+            PackgesSelect.createWithThis(checkObjs, externals);
             
             //Muda o titulo do JFrame para o nome do Projeto
             main.setTitle("EngineTeste - "+campo_NamePr.getText());

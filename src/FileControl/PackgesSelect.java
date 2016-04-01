@@ -12,18 +12,14 @@ import java.util.logging.Logger;
 
 public class PackgesSelect {
     
-    ArrayList<File> Assents = new ArrayList<>();
-    File file, assents;
-    File projeto;
+    public static File file = new File(System.getenv("ProgramFiles")+"//EngineTest");
+    public static File assents = new File(file.getPath()+"//Assents");
+    public static File projeto;
+    
+    public static ArrayList<File> Assents = new ArrayList<>();
     public static File assFolder;
     
-    public PackgesSelect(){
-        String i = System.getenv("ProgramFiles");
-        file = new File(i+"//EngineTest");
-        assents = new File(file.getPath()+"//Assents");
-    }
-    
-    public void createFolder(String name){
+    public static void createFolder(String name){
         //cria pasta do projeto em meus documentos
         projeto = new File(doc.getPath()+"//EngineProjects//"+name);
         projeto.mkdir();
@@ -33,17 +29,17 @@ public class PackgesSelect {
         assFolder.mkdir();
     }
     
-    public int getNumPacks(){
+    public static int getNumPacks(){
         return assents.listFiles().length;
     }
     
-    public String getPacksNames(int i){
+    public static String getPacksNames(int i){
         File childs[] = assents.listFiles();
         int fim = childs[i].toString().lastIndexOf("\\");
         return childs[i].toString().substring(fim+1);
     }
     
-    public void createWithThis(ArrayList<Boolean> objs, ArrayList<File> externals){
+    public static void createWithThis(ArrayList<Boolean> objs, ArrayList<File> externals){
         //Procura arquivos do pacotes
         for(int i = 0; i<objs.size(); i++){
             if(objs.get(i)){
@@ -55,17 +51,14 @@ public class PackgesSelect {
             }
         }
         
-        externals.stream().forEach((external) -> {//For Each Chique
-            Assents.add(external);
-        });
-        
-        Assents.stream().forEach((copyFile) -> {
-            copiaArq(copyFile, typeFile(copyFile));
-        });
-       
+        if(externals != null){
+            externals.stream().forEach((external) -> Assents.add(external));
+
+            Assents.stream().forEach((copyFile) -> copiaArq(copyFile, typeFile(copyFile)));
+        }
     }
     
-    private File typeFile(File source){
+    public static File typeFile(File source){
         String path = source.getName();
         int fim = path.lastIndexOf(".");
         String nome = path.substring(0, fim);
@@ -79,7 +72,7 @@ public class PackgesSelect {
     }
 
     
-    public void copiaArq(File f, File dest){
+    public static void copiaArq(File f, File dest){
         CopyOption[] options = new CopyOption[]{StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES};
         try {
             Files.copy(f.toPath(), dest.toPath(), options);

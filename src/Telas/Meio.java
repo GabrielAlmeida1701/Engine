@@ -51,6 +51,10 @@ public class Meio extends JPanel implements Runnable{
         } catch (IOException ex) {}
     }
     
+    public void reload(){
+        lado.AddMoreButtons();
+    }
+    
     private void createTabs(){
         main.areaL().addTab("Imagens", null, lado, "Arquivos de Imagens");
     }
