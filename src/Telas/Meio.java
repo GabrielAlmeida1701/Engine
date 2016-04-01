@@ -51,8 +51,8 @@ public class Meio extends JPanel implements Runnable{
         } catch (IOException ex) {}
     }
     
-    public void reload(){
-        lado.AddMoreButtons();
+    public void reload(ArrayList<File> Assents){
+        lado.AddMoreButtons(Assents);
     }
     
     private void createTabs(){

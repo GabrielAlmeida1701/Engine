@@ -20,6 +20,6 @@ public class MenusLaterais extends JPanel{
         jp.setPreferredSize(new Dimension(larg-10 ,(int) ((main.areaL().getHeight())*0.7f) ));
     }
     
-    public void AddMoreButtons(){}
+    public void AddMoreButtons(ArrayList<File> Assents){}
     
 }

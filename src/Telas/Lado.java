@@ -21,6 +21,9 @@ public class Lado extends MenusLaterais{
         
         int larg = main.areaL().getWidth();
         
+        //Limpa o painel
+        panel.removeAll();
+        
         //Coloca os Botoes
         for(int i=0; i<Assents.size(); i++){
             JButton bt = null;
@@ -54,13 +57,31 @@ public class Lado extends MenusLaterais{
     }
     
     @Override
-    public void AddMoreButtons(){
-        for(int i=0; i<5; i++){
+    public void AddMoreButtons(ArrayList<File> Assents){
+        panel.removeAll();
+        
+        for(int i=0; i<Assents.size(); i++){
             JButton bt = null;
-            bt = new JButton(""+i);
+            final File f = Assents.get(i);
+            
+            bt = new JButton(Assents.get(i).getName());
+            
             bt.setPreferredSize(new Dimension(70, 70));
             panel.add(bt);
-            panel.updateUI();
+            
+            bt.addActionListener(new ActionListener(){
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    GameObject go = difineItem.newItem(f, f.getName());
+                    meio.screen.elementos.add( go );
+                    meio.screen.selectElm = go;
+                    main.setTransformValues(go.position.x, go.position.y,
+                                    go.scale.width, go.scale.height);
+                }
+            });
         }
+        
+        panel.updateUI();
     }
 }

@@ -128,7 +128,7 @@ public class AddPackge extends javax.swing.JFrame {
         
         Assents.stream().forEach((copyFile) -> copiaArq(copyFile, typeFile(copyFile)));
         
-        meio.reload();
+        meio.reload(Assents);
         dispose();
     }//GEN-LAST:event_DoneBntActionPerformed
 

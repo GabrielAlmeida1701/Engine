@@ -118,6 +118,11 @@ public class Main extends javax.swing.JFrame {
 
         addExternal.setBackground(new java.awt.Color(80, 80, 80));
         addExternal.setText("[Adiciona AE]");
+        addExternal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addExternalActionPerformed(evt);
+            }
+        });
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Adicionar Arquivo Externo");
@@ -497,6 +502,14 @@ public class Main extends javax.swing.JFrame {
             addPck.setVisible(true);
         }
     }//GEN-LAST:event_addPackgeActionPerformed
+
+    private void addExternalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addExternalActionPerformed
+        if(meio != null){
+            int x = getX()+getWidth()/2, y = getY()+getHeight()/2;
+            AddExternal addExt = new AddExternal(this);
+            addExt.setVisible(true);
+        }
+    }//GEN-LAST:event_addExternalActionPerformed
     
     public void backTool(){
         moveTool.setIcon(new ImageIcon(getClass().getResource("/resource/icones/move.png")));

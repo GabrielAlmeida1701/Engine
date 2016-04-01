@@ -51,11 +51,10 @@ public class PackgesSelect {
             }
         }
         
-        if(externals != null){
+        if(externals != null)
             externals.stream().forEach((external) -> Assents.add(external));
-
-            Assents.stream().forEach((copyFile) -> copiaArq(copyFile, typeFile(copyFile)));
-        }
+        
+        Assents.stream().forEach((copyFile) -> copiaArq(copyFile, typeFile(copyFile)));
     }
     
     public static File typeFile(File source){
