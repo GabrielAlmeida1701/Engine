@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class Lado extends MenusLaterais{
     
@@ -29,7 +31,8 @@ public class Lado extends MenusLaterais{
             JButton bt = null;
             final File f = Assents.get(i);
             
-            bt = new JButton(Assents.get(i).getName());
+            Icon icone = new ImageIcon(f.getPath());
+            bt = new JButton(icone);
             
             bt.setPreferredSize(new Dimension(70, 70));
             panel.add(bt);
@@ -54,6 +57,19 @@ public class Lado extends MenusLaterais{
         jp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);//garante q a barra de rolagem apareça
         
         add(jp);
+        
+        JSlider size = new JSlider(JSlider.HORIZONTAL, 10, 150, 70);
+        size.addChangeListener(new ChangeListener(){
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                atualizaLado(size.getValue());
+            }
+        });
+        add(size);
+    }
+    
+    private void atualizaLado(int valor){
+        System.out.println();
     }
     
     @Override
@@ -64,7 +80,8 @@ public class Lado extends MenusLaterais{
             JButton bt = null;
             final File f = Assents.get(i);
             
-            bt = new JButton(Assents.get(i).getName());
+            Icon icone = new ImageIcon(f.getPath());
+            bt = new JButton(icone);
             
             bt.setPreferredSize(new Dimension(70, 70));
             panel.add(bt);
