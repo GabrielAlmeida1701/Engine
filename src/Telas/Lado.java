@@ -2,7 +2,10 @@ package Telas;
 
 import Packages.GameObject;
 import Packages.difineItem;
+import StatusCtrl.StatusFilePanel;
 import Sys.Main;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +18,8 @@ import javax.swing.event.ChangeListener;
 public class Lado extends MenusLaterais{
     
     JPanel panel = new JPanel();
+    public JPanel statusPanel = new JPanel();
+    StatusFilePanel sfp;
     
     public Lado(Main main, Meio meio, ArrayList<File> assents){
         this.main = main;
@@ -25,6 +30,8 @@ public class Lado extends MenusLaterais{
         
         //Limpa o painel
         panel.removeAll();
+        
+        sfp = new StatusFilePanel(this);
         
         //Coloca os Botoes
         for(int i=0; i<Assents.size(); i++){
@@ -38,14 +45,9 @@ public class Lado extends MenusLaterais{
             panel.add(bt);
             
             bt.addActionListener(new ActionListener(){
-
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    GameObject go = difineItem.newItem(f, f.getName());
-                    meio.screen.elementos.add( go );
-                    meio.screen.selectElm = go;
-                    main.setTransformValues(go.position.x, go.position.y,
-                                    go.scale.width, go.scale.height);
+                    sfp.UpdateUI(f);
                 }
             });
         }
@@ -58,7 +60,7 @@ public class Lado extends MenusLaterais{
         
         add(jp);
         
-        JSlider size = new JSlider(JSlider.HORIZONTAL, 10, 150, 70);
+        JSlider size = new JSlider(JSlider.HORIZONTAL, 25, 150, 70);
         size.addChangeListener(new ChangeListener(){
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -66,10 +68,29 @@ public class Lado extends MenusLaterais{
             }
         });
         add(size);
+        
+        statusPanel.setPreferredSize(new Dimension(larg, main.getHeight()/4));
+        statusPanel.setBackground(Color.GRAY);
+        
+        for(int i=0; i<sfp.CreateUIElements().length; i++)
+            statusPanel.add(sfp.CreateUIElements()[i]);
+        
+        add(statusPanel);
     }
     
     private void atualizaLado(int valor){
-        System.out.println();
+        for(int i=0; i<panel.getComponents().length; i++){
+            Component bnt = panel.getComponents()[i];
+            if(bnt instanceof JButton){
+                if(valor > 30){
+                    ((JButton)bnt).setPreferredSize(new Dimension(valor, valor));
+                }else{
+                    ((JButton)bnt).setPreferredSize(new Dimension(valor*5, valor));
+                }
+            }
+        }
+        
+        panel.updateUI();
     }
     
     @Override
@@ -99,6 +120,12 @@ public class Lado extends MenusLaterais{
             });
         }
         
+        panel.updateUI();
+    }
+    
+    @Override
+    public void resize(){
+        statusPanel.setPreferredSize(new Dimension(main.areaL().getWidth(), main.getHeight()/4));
         panel.updateUI();
     }
 }

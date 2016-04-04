@@ -1,5 +1,6 @@
 package Sys;
 
+import Impl.WindowListenerImpl;
 import Packages.Elemento;
 import Telas.Meio;
 import java.awt.Component;
@@ -21,6 +22,8 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         setTitle("EngineTeste");
         setLocation( (tool.width/2)-(getSize().width/2) , (tool.height/2)-(getSize().height/2) );
+        
+        addComponentListener(new WindowListenerImpl(this));
     }
 
     @SuppressWarnings("unchecked")
@@ -510,6 +513,11 @@ public class Main extends javax.swing.JFrame {
             addExt.setVisible(true);
         }
     }//GEN-LAST:event_addExternalActionPerformed
+    
+    public void resized(){
+        if(meio != null)
+            meio.resize();
+    }
     
     public void backTool(){
         moveTool.setIcon(new ImageIcon(getClass().getResource("/resource/icones/move.png")));

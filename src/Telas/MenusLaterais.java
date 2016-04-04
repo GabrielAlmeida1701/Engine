@@ -22,4 +22,6 @@ public class MenusLaterais extends JPanel{
     
     public void AddMoreButtons(ArrayList<File> Assents){}
     
+    public void resize(){}
+    
 }

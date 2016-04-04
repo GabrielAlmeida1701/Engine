@@ -79,6 +79,10 @@ public class Meio extends JPanel implements Runnable{
         g = (Graphics2D) getGraphics();
     }
     
+    public void resize(){
+        lado.resize();
+    }
+    
     @Override
     public void run() {
         init();
