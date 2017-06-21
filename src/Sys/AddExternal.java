@@ -1,10 +1,10 @@
 package Sys;
 
-import FileControl.ImageFilter;
-import static FileControl.PackgesSelect.Assents;
-import static FileControl.PackgesSelect.copiaArq;
-import static FileControl.PackgesSelect.typeFile;
-import FileControl.acceptFiles;
+import FileCtrl.ImageFilter;
+import static FileCtrl.PackgesSelect.Assents;
+import static FileCtrl.PackgesSelect.copiaArq;
+import static FileCtrl.PackgesSelect.typeFile;
+import FileCtrl.acceptFiles;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Vector;

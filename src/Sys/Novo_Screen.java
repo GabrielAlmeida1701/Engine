@@ -1,12 +1,12 @@
 package Sys;
 
-import FileControl.ImageFilter;
+import FileCtrl.ImageFilter;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.table.DefaultTableModel;
-import FileControl.PackgesSelect;
-import FileControl.acceptFiles;
+import FileCtrl.PackgesSelect;
+import FileCtrl.acceptFiles;
 import Telas.Meio;
 import java.io.File;
 import java.util.Vector;
@@ -14,7 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import static FileControl.acceptFiles.doc;
+import static FileCtrl.acceptFiles.doc;
 
 public class Novo_Screen extends javax.swing.JInternalFrame {
 

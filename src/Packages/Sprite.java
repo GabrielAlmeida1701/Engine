@@ -1,7 +1,7 @@
 package Packages;
 
 import java.io.File;
-import FileControl.ImageFilter;
+import FileCtrl.ImageFilter;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.io.IOException;

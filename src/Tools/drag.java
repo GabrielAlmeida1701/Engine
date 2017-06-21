@@ -7,6 +7,9 @@ import java.awt.Point;
 public class drag extends tool{
     
     @Override
+    public void Tool_Click(Point e){}
+    
+    @Override
     public void useTool(Point e, Main main) {
         if(select != null){
             int x = e.x-select.scale.width/2;
@@ -19,12 +22,12 @@ public class drag extends tool{
                                     select.scale.width, select.scale.height);
         }
     }
-
+    
+    @Override
+    public void ReleaseTool(){}
+    
     @Override
     public void draw(Graphics g) {}
-
-    @Override
-    public void frstClick(Point e) {}
     
     
 }

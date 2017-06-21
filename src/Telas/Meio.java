@@ -1,6 +1,6 @@
 package Telas;
 
-import FileControl.PackgesSelect;
+import FileCtrl.PackgesSelect;
 import Sys.Main;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -56,7 +56,8 @@ public class Meio extends JPanel implements Runnable{
     }
     
     private void createTabs(){
-        main.areaL().addTab("Imagens", null, lado, "Arquivos de Imagens");
+        main.areaL().addTab("Project", null, lado, "Project Files");
+        main.areaL().addTab("[[Objects]]", null, new JPanel(), "Blueprints/Prefabs");
     }
     
     @Override
@@ -113,6 +114,11 @@ public class Meio extends JPanel implements Runnable{
         setSize(main.igualaMeio(this, main.AREA_CENTER));
         lado.corrige_Tam();
         
+        if(adicionado){
+            lado.addTab();
+            adicionado = false;
+        }
+        
         if(x != getWidth() || y != getHeight()){
             x = getWidth();
             y = getHeight();
@@ -143,6 +149,9 @@ public class Meio extends JPanel implements Runnable{
         img = null;
         assents.removeAll(assents);
     }
+    
+    private static boolean adicionado;
+    public static void AddComp(){ adicionado = true; }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

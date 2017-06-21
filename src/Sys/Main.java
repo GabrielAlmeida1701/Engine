@@ -7,6 +7,9 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
 
@@ -62,6 +65,8 @@ public class Main extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         moveTool = new javax.swing.JLabel();
         scaleTool = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        addComponent = new javax.swing.JButton();
         AreaCenter = new javax.swing.JPanel();
         AreaLado = new javax.swing.JTabbedPane();
 
@@ -281,6 +286,15 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        addComponent.setText("Add Comp");
+        addComponent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addComponentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout fundo2Layout = new javax.swing.GroupLayout(fundo2);
         fundo2.setLayout(fundo2Layout);
         fundo2Layout.setHorizontalGroup(
@@ -321,7 +335,11 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(moveTool, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(scaleTool, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(626, Short.MAX_VALUE))
+                .addGap(109, 109, 109)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(addComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(387, Short.MAX_VALUE))
         );
         fundo2Layout.setVerticalGroup(
             fundo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,6 +383,11 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(scaleTool, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(moveTool, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(jSeparator4)
+            .addGroup(fundo2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Menus.addTab("Objeto", fundo2);
@@ -513,6 +536,12 @@ public class Main extends javax.swing.JFrame {
             addExt.setVisible(true);
         }
     }//GEN-LAST:event_addExternalActionPerformed
+
+    private void addComponentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComponentActionPerformed
+        if(meio != null){
+            
+        }
+    }//GEN-LAST:event_addComponentActionPerformed
     
     public void resized(){
         if(meio != null)
@@ -605,6 +634,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Novo;
     private javax.swing.JButton Save;
     private javax.swing.JButton Save1;
+    private javax.swing.JButton addComponent;
     private javax.swing.JButton addExternal;
     private javax.swing.JButton addPackge;
     private javax.swing.JPanel fundo1;
@@ -622,6 +652,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel moveTool;
     private javax.swing.JLabel objLab;
     private javax.swing.JLabel scaleTool;

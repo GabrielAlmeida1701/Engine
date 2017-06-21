@@ -1,12 +1,12 @@
 package Sys;
 
-import FileControl.PackgesSelect;
-import static FileControl.PackgesSelect.Assents;
-import static FileControl.PackgesSelect.assents;
-import static FileControl.PackgesSelect.copiaArq;
-import static FileControl.PackgesSelect.getPacksNames;
-import static FileControl.PackgesSelect.typeFile;
-import FileControl.acceptFiles;
+import FileCtrl.PackgesSelect;
+import static FileCtrl.PackgesSelect.Assents;
+import static FileCtrl.PackgesSelect.assents;
+import static FileCtrl.PackgesSelect.copiaArq;
+import static FileCtrl.PackgesSelect.getPacksNames;
+import static FileCtrl.PackgesSelect.typeFile;
+import FileCtrl.acceptFiles;
 import Telas.Meio;
 import java.io.File;
 import java.util.ArrayList;

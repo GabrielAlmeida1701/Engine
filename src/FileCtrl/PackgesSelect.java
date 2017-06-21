@@ -1,6 +1,6 @@
-package FileControl;
+package FileCtrl;
 
-import static FileControl.acceptFiles.doc;
+import static FileCtrl.acceptFiles.doc;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.CopyOption;

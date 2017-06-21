@@ -24,4 +24,6 @@ public class MenusLaterais extends JPanel{
     
     public void resize(){}
     
+    public void addTab(){}
+    
 }

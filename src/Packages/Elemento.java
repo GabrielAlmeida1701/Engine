@@ -65,4 +65,9 @@ public class Elemento {
                             );
     }
     
+    
+    @Override
+    public String toString(){
+        return "Elemento: X:"+position.x+", Y: "+position.y;
+    }
 }

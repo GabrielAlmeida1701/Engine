@@ -69,15 +69,18 @@ public class Screen implements MouseListener, MouseMotionListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
-       tool.selectItem(elementos, meio.main, e.getPoint());
-       selectElm = tool.getSelected();
-       
-       if(ferr != null)
-           ferr.frstClick(e.getPoint());
+        if(selectElm != tool.selectItem(elementos, meio.main, e.getPoint()))
+            selectElm = tool.getSelected();
+        else
+            ferr.Tool_Click(e.getPoint());
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {
+        if(ferr != null)
+            ferr.ReleaseTool();
+    }
+    
     @Override
     public void mouseEntered(MouseEvent e) {}
     @Override

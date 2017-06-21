@@ -14,7 +14,7 @@ public abstract class tool {
     
     static GameObject selectGO;
     
-    public static void selectItem(ArrayList<Elemento> elementos, Main main, Point e){
+    public static Elemento selectItem(ArrayList<Elemento> elementos, Main main, Point e){
         int i = 0;
         for(Elemento elms: elementos){
             Rectangle box = elms.boxC;
@@ -30,6 +30,8 @@ public abstract class tool {
             if(i == elementos.size())
                 select = null;
         }
+        
+        return select;
     }
     
     public static Elemento getSelected(){return select;}
@@ -37,11 +39,16 @@ public abstract class tool {
     public static void deselectItem(){
         select = null;
     }
-
-    public abstract void frstClick(Point e);
+    
+    public abstract void Tool_Click(Point e);
     
     public abstract void useTool(Point e, Main main);
     
+    public abstract void ReleaseTool();
+    
     public abstract void draw(Graphics g);
     
+    protected void print(Object o){
+        System.out.println(o.toString());
+    }
 }
